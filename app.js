@@ -127,3 +127,19 @@ car@ matches
 * - The 0 or more quantifier (similar to + )
 
 */
+
+const onlyFive = "hello this should only match the first 5 letters";
+
+// notice carrot is outside of the range[a-z] to tell the regex that whatever follows must be at the start of the form field.
+// notice the $ is at the end of the regex ensuring that the five letter word will be at the end.
+const onlyFiveRegex = /^[a-z]{5}$/;
+
+//currently this match returns null because onlyFive has an entire sentence. To get this to match you would need to change it to hello
+console.log(onlyFive.match(onlyFiveRegex));
+
+const pireOrTire = "pire or tire or fire";
+
+// () for using the or | abd then whatever follows.
+const pireOrTireRegex = /(p|t)ire/gi;
+
+console.log(pireOrTire.match(pireOrTireRegex));
